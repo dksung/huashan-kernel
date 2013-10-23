@@ -420,7 +420,7 @@ static ssize_t out_write(struct audio_stream_out *stream, const void* buffer,
     pthread_mutex_lock(&out->buf_lock);
     pthread_mutex_lock(&out->lock);
     if (!out->bt_enabled || out->suspended) {
-        ALOGV("a2dp %s: bluetooth disabled bt_en %d, suspended %d",
+        ALOGV("a2dp: bluetooth disabled bt_en %d, suspended %d",
              out->bt_enabled, out->suspended);
         ret = -1;
         goto err_bt_disabled;
